@@ -1,0 +1,34 @@
+from django.conf.urls import patterns, include, url
+from downmangas.views import *
+
+# Uncomment the next two lines to enable the admin:
+# from django.contrib import admin
+# admin.autodiscover()
+
+urlpatterns = patterns('',
+
+    (r'^$', say_main),
+
+    (r'^submanga/todos/(.*)$', bajarTodosMangas),
+    (r'^submanga/manga/(.*)$', bajar1Manga),
+    (r'^submanga/rango/(.*)$', bajarRangoMangas),
+    (r'^submanga/code/(.*)$', bajarCodeManga),
+
+    (r'^submanga/scan/todos/(.*)$', bajarTodosMangasScan),
+    (r'^submanga/scan/manga/(.*)$', bajar1MangaScan),
+    (r'^submanga/scan/rango/(.*)$', bajarRangoMangasScan),
+
+    (r'^mangafox/manga/(.*)$', bajar1MangaFox),
+    (r'^mangafox/rango/(.*)$', bajarRangoMangasFox),
+    (r'^mangafox/code/(.*)$', bajarCodeMangaFox),
+
+    # Examples:
+    # url(r'^$', 'submanga.views.home', name='home'),
+    # url(r'^submanga/', include('submanga.foo.urls')),
+
+    # Uncomment the admin/doc line below to enable admin documentation:
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    # url(r'^admin/', include(admin.site.urls)),
+)

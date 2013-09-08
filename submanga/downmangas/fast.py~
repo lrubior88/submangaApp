@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: cp1252 -*-
+ 
+import httplib # Necesaria para hacer peticiones HTTP
+import os
+ 
+# Configuración
+
+conn = httplib.HTTPConnection("submanga.com")
+peticion = "/c/180109"
+conn.request("GET", peticion)
+
+r = conn.getresponse()
+print r.status, r.reason
+data = r.read()
+print data
