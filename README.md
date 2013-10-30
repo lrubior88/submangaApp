@@ -1,0 +1,1 @@
+Submanga App in Django
